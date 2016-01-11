@@ -11,7 +11,6 @@ class Application extends Controller {
 
   def welcome = Action {
     Ok(views.html.welcome("You are welcome."))
-
   }
 
 }
