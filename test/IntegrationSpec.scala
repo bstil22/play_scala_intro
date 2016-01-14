@@ -13,20 +13,18 @@ import play.api.test.Helpers._
 class IntegrationSpec extends Specification {
 
   "Application" should {
-
     "work from within a browser" in new WithBrowser {
 
       browser.goTo("http://localhost:" + port)
 
       browser.pageSource must contain("HTML content here.")
     }
-
+    
     "/welcome should work within a browser" in new WithBrowser {
 
       browser.goTo("http://localhost:" + port + "/welcome")
 
       browser.pageSource must contain("You are welcome.")
-
     }
   }
 }
