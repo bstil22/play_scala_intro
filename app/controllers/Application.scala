@@ -11,7 +11,10 @@ class Application extends Controller {
 
   def welcome = Action {
     Ok(views.html.welcome("You are welcome."))
+  }
 
+  def about = Action {
+    Ok(views.html.about("Stuff about us."))
   }
 
 }
