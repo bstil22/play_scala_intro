@@ -34,5 +34,13 @@ class ApplicationSpec extends Specification {
       contentType(welcomeRequest) must beSome.which(_ == "text/html")
       contentAsString(welcomeRequest) must contain ("You are welcome.")
     }
+
+    "render the about page" in new WithApplication{
+      val welcomeRequest = route(FakeRequest(GET, "/about")).get
+
+      status(welcomeRequest) must equalTo(OK)
+      contentType(welcomeRequest) must beSome.which(_ == "text/html")
+      contentAsString(welcomeRequest) must contain ("Stuff about us.")
+    }
   }
 }
