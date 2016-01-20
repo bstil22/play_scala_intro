@@ -13,7 +13,7 @@ class TasksSpec extends Specification {
       route(FakeRequest(GET, "/tasks")) must beSome.which(status(_) == 200)
     }
 
-    "render the welcome page" in new WithApplication{
+    "render the tasks page" in new WithApplication{
       val tasksRequest = route(FakeRequest(GET, "/tasks")).get
 
       status(tasksRequest) must equalTo(OK)
