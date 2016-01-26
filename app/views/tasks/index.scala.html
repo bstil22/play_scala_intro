@@ -1,11 +1,19 @@
-@(content: String)
+@(tasks: List[Task])
 @main("Tasks") {
 
-<h1>@content</h1>
+<h1>Task Add</h1>
 <div>
-    <form>
-        <input type="text" name="taskName" placeholder="Add a task">
-        <input type="submit" value="add">
+    <form action="@routes.Tasks.addTask()" method="post">
+        <input id= "taskBody" type="text" name="taskName" placeholder="Add a task">
+        <input id= "add" type="submit" value="add">
     </form>
+</div>
+
+<div>
+    <ul>
+        @tasks.map { task =>
+            <li>@task.name</li>
+        }
+    </ul>
 </div>
 }

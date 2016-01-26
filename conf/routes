@@ -13,3 +13,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 #get tasks
 GET /tasks                          controllers.Tasks.index
 #create a task
+POST /tasks                         controllers.Tasks.addTask
