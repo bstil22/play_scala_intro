@@ -9,9 +9,4 @@ class Tasks extends Controller {
     Ok(views.html.tasks.index("Add a task"))
   }
 
-  def add = Action {
-    Ok(views.html.tasks.add())
-  }
-
-
 }
