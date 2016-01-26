@@ -1,6 +1,11 @@
 @(content: String)
 @main("Tasks") {
 
-    <h1>@content</h1>
-
+<h1>@content</h1>
+<div>
+    <form>
+        <input type="text" name="taskName" placeholder="Add a task">
+        <input type="submit" value="add">
+    </form>
+</div>
 }
