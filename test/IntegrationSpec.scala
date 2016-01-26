@@ -26,5 +26,13 @@ class IntegrationSpec extends Specification {
 
       browser.pageSource must contain("You are welcome.")
     }
+
+    "be able to add a task" in new WithBrowser {
+      browser.goTo("http://localhost:" + port + "/tasks")
+
+      browser.$("#taskBody").text("mow the lawn tomorrow")
+      browser.$("#add").click()
+      browser.pageSource must contain("mow the lawn tomorrow")
+    }
   }
 }
